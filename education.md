@@ -4,7 +4,7 @@
 
 ## 🎯 Executive Summary
 
-EduBridge AI is an intelligent learning platform that diagnoses a student's knowledge gaps through a short diagnostic quiz, creates a personalized learning path, and delivers tailored micro-lessons and practice problems. The core experience involves a student taking a quiz, receiving a visual "Knowledge Graph" of their strengths and weaknesses, and being guided through a curated sequence of resources to master missing concepts, all supported by an AI explanation bot.
+Extenducation AI is an intelligent learning platform that diagnoses a student's knowledge gaps through a short diagnostic quiz, creates a personalized learning path, and delivers tailored micro-lessons and practice problems. The core experience involves a student taking a quiz, receiving a visual "Knowledge Graph" of their strengths and weaknesses, and being guided through a curated sequence of resources to master missing concepts, all supported by an AI explanation bot.
 
 ## 🚀 MVP (Minimum Viable Product)
 
