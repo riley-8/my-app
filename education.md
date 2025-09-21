@@ -35,6 +35,29 @@ EduBridge AI is an intelligent learning platform that diagnoses a student's know
 *   **Deployment:** Microsoft Azure (App Service + Static Web Apps)
 *   **Methodology:** Agile, Rapid Prototyping
 
+## 🔍 How It Works: ML & Logic
+* ** 1. Knowledge Gap Analysis (Rule-Based): Incorrect quiz answers are mapped to specific topics in our seeded hierarchy. A proficiency score per topic is calculated from the ratio of correct to attempted questions.
+
+* ** 2.Learning Path Generation: The system identifies topics with the lowest proficiency scores and queries the resources table for the best content to address those gaps.
+
+* ** 3. AI Explanation Bot (Gemini): The user's question and the relevant topic context are sent to Gemini via a carefully engineered prompt instructing it to act as a Socratic tutor, explaining concepts rather than just giving answers.
+
+## 📊 Data Sourcing & Seeding
+* **Questions: A curated bank of 50-100 questions for a single, well-defined subject (e.g., Grade 10 Mathematics) will be created manually and stored in Supabase.
+
+* **Resources: A JSON file mapping each topic to 2-3 high-quality, free online resources (Khan Academy, YouTube, MDN) will be created and imported into the resources table.
+##📈 Metrics for Impact
+P* **roficiency Improvement: "After a 10-question diagnostic, a student's proficiency in 'Quadratic Equations' was 20%. After completing the recommended resources, their score on a follow-up quiz rose to 80%."
+
+* **Engagement: Number of completed learning paths and interactions with the AI bot.
+
+##🔒 Security, Privacy & Ethics
+* **Disclaimer: A clear disclaimer is displayed, stating this is an educational aid and not a certified assessment tool.
+
+* **Data: All user quiz data is anonymized for analytics. No personally identifiable information (PII) is required for the core experience.
+
+ * **AI Safety: Prompts to Gemini are designed to avoid generating harmful or misleading educational content.
+
 ## 🗃️ Data Schema (Supabase - Minimal)
 
 ```sql
@@ -63,27 +86,4 @@ CREATE TABLE resources (
     url TEXT NOT NULL,
     type VARCHAR(100) -- e.g., 'video', 'article', 'exercise'
 );
-'''
 
-## 🔍 How It Works: ML & Logic
-* ** 1. Knowledge Gap Analysis (Rule-Based): Incorrect quiz answers are mapped to specific topics in our seeded hierarchy. A proficiency score per topic is calculated from the ratio of correct to attempted questions.
-
-* ** 2.Learning Path Generation: The system identifies topics with the lowest proficiency scores and queries the resources table for the best content to address those gaps.
-
-* ** 3. AI Explanation Bot (Gemini): The user's question and the relevant topic context are sent to Gemini via a carefully engineered prompt instructing it to act as a Socratic tutor, explaining concepts rather than just giving answers.
-
-## 📊 Data Sourcing & Seeding
-* **Questions: A curated bank of 50-100 questions for a single, well-defined subject (e.g., Grade 10 Mathematics) will be created manually and stored in Supabase.
-
-* **Resources: A JSON file mapping each topic to 2-3 high-quality, free online resources (Khan Academy, YouTube, MDN) will be created and imported into the resources table.
-##📈 Metrics for Impact
-P* **roficiency Improvement: "After a 10-question diagnostic, a student's proficiency in 'Quadratic Equations' was 20%. After completing the recommended resources, their score on a follow-up quiz rose to 80%."
-
-* **Engagement: Number of completed learning paths and interactions with the AI bot.
-
-##🔒 Security, Privacy & Ethics
-* **Disclaimer: A clear disclaimer is displayed, stating this is an educational aid and not a certified assessment tool.
-
-* **Data: All user quiz data is anonymized for analytics. No personally identifiable information (PII) is required for the core experience.
-
- * **AI Safety: Prompts to Gemini are designed to avoid generating harmful or misleading educational content.
